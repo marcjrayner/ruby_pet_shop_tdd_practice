@@ -31,6 +31,7 @@ class TestPetShop < Minitest::Test
       price: 100
     }
 
+
     @pet_shop = {
       pets: [
         {

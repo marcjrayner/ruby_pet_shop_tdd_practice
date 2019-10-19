@@ -82,6 +82,7 @@ end
 return true
 end
 
+
 def sell_pet_to_customer(shop, sold_pet, customer)
 pet = find_pet_by_name(shop, sold_pet)
   for pet in shop[:pets]
