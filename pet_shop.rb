@@ -83,11 +83,14 @@ return true
 end
 
 def sell_pet_to_customer(shop, sold_pet, customer)
-
 pet = find_pet_by_name(shop, sold_pet)
   for pet in shop[:pets]
     price = pet[:price]
-    if customer_can_afford_pet(customer, sold_pet) && sold_pet == pet
+    if pet == nil
+      return "Pet not found"
+    elsif customer[:cash] < price
+      return "Insufficient funds"
+    elsif sold_pet == pet
       customer[:pets].push(pet)
       shop[:pets].delete(pet)
       shop[:admin][:pets_sold] += 1
